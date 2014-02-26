@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block center_main_content %}
+
+<form method="post" action="">{% csrf_token %}
+<table>{{form.as_table}}</table>
+<input type="submit" value="Add">
+</form>
+
+{% endblock center_main_content %}

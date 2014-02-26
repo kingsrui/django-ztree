@@ -1,0 +1,5 @@
+<table>
+<tr> <th>Name:</th> <td>{{trv_node.content_object.name}}</td> </tr>
+<tr> <th>Short Name:</th> <td>{{trv_node.content_object.short_name}}</td> </tr>
+<tr> <th>Description:</th><td>{{trv_node.content_object.desc}}</td> </tr>
+</table>

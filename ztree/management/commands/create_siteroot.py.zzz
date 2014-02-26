@@ -1,0 +1,22 @@
+from optparse import make_option
+from django.core.management.base import BaseCommand, CommandError
+from django.contrib.auth.models import User
+
+from ztree.models import Node, SiteRoot
+
+class Command(BaseCommand):
+    #option_list = BaseCommand.option_list + (
+    #    make_option('--long', '-l', dest='long',
+    #        help='Help for the long options'),
+    #)
+    help = 'Create TreeContent SiteRoot objects for current site'
+
+    def handle(self, **options):
+        #siteroot_content_type = ContentType.objects.get(app_label='tree', model='siteroot') 
+        admin_user = User.objects.get(username='admin') 
+        new_siteroot = SiteRoot()
+        new_siteroot.save()
+        siteroot_node = Node(parent=None,  # site root has no parent
+                                      slug='siteroot',
+                                      content_object=new_siteroot)
+        siteroot_node.save(user=admin_user)

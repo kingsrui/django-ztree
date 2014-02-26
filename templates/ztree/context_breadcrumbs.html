@@ -1,0 +1,14 @@
+<ul class="breadcrumb">
+  {% for crumb in tree_context_breadcrumbs %}
+    {% if forloop.first %}
+    <li><a href="/">Home</a> <span class="divider">/</span></li>
+    {% endif %}
+    {% if forloop.last %}
+    <li class="active">{{ crumb.name }}</li>
+    {% else %}
+    <li><a href="{{ crumb.url }}">{{ crumb.name }}</a><span class="divider">/</span></li>
+    {% endif %} 
+  {% empty %}
+    <li class="active">Home</li>
+  {% endfor %}
+</ul>

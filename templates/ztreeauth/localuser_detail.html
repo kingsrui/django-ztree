@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block center_main_content %}
+
+Username: {{object.user.username}}
+
+Groups:
+{% for grp in object.groups.all %}
+  {{ grp.name }},&nbsp
+{% endfor %}
+
+{% endblock center_main_content %}

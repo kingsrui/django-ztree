@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block center_top_content %}
+{% endblock %}
+
+{% block center_main_content %}
+
+<p>Sure want to delete?</p>
+<form method="post" action="">{% csrf_token %}
+<input type="submit" value="Delete">
+</form>
+
+
+{% endblock %}
+
+{# block center_bottom_content #}
+
+{# endblock #}
