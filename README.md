@@ -84,7 +84,7 @@ Now assume we also created a PriceUtil at the 'shoes' Section.
 
     /superstore/mensdept/shoes/shoespriceutil
 
-Now if we do a PriceUtil lookup (content type name 'mystore.priceutil') from the 'shoespriceutil' (for example we are displaying the shoes and need applicable price info).
+Now if we do a PriceUtil lookup (content type name 'mystore.priceutil') from the 'hushpuppies123' (context). For example we are displaying the shoes detail and need applicable price info.
 
     from ztree.query.manager import TreeQueryManager
     tqm = TreeQueryManager()
@@ -93,7 +93,7 @@ Now if we do a PriceUtil lookup (content type name 'mystore.priceutil') from the
 
 We will get the '/superstore/mensdept/shoes/shoespriceutil' utility.
 
-This could be used to override objects (pricing configuration in this case) in more local parts of the tree branch. For example we could have set up some generic PricUtil at the department level and override it by creating one at the 'shoes' section level. Lookup always retrieving more local object. 
+This could be used to override objects (pricing configuration in this case) in more local parts of the tree branch. For example we could set up some generic PricUtil at the department level and override it by creating one at the 'shoes' section level. Lookup always retrieving more local object. 
 
 
 Authentication
@@ -107,4 +107,4 @@ For example if we created a user 'joeb' in Department 'mensdept' with some depar
 Web Services
 ------------
 
-It is possible to set up ztree as a back-end web service allowing for easier caching, better performance and separation from the front-end.  
+It is possible to set up ztree as a back-end web service allowing for easier caching, better performance and separation from the front-end.
