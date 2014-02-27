@@ -5,7 +5,7 @@ django-ztree
 
 Hierarchical db model (Zope inspired) implementation for Django.
 
-For example, let's build a naive example of the following Model hierarchy:
+For example, let's build a naive retail model hierarchy example:
 
 
                   Store
