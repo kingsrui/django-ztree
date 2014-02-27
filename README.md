@@ -17,7 +17,7 @@ For example, let's build a naive retail model hierarchy example:
                 PriceUtil   RetailItem
 
 
-We do this by specifying parents and children constraints. Assuming app label is 'mystore'.
+We do this by specifying parents and children constraints. (Assuming app label is 'mystore'.)
 
 
     from ztree import TreeContent
@@ -66,13 +66,13 @@ Tree Traversal
 
 The following methods are available for tree traversal (search).
 
-    get_node - retrieves tree node given the context path
+    get_node        - retrieves tree node given the context path
     filter_children - filters children of a given node, if no filter specified all children returned
-    lookup - searches up the tree branch from the context node (towards the root) returning the first node
-             satisfying the filter
-    lookup_all - same as lookup but returns all nodes 
+    lookup          - searches up tree branch (towards root) starting from context node returning the first node
+                      satisfying the filter
+    lookup_all      - same as lookup but returns all nodes found
     filter_descendents - descendents search from a given context node
-    count_children - count children of a context node satisfying the filter
+    count_children     - count children of a context node satisfying the filter
 
 For example, if we had a node:
 
@@ -80,11 +80,11 @@ For example, if we had a node:
 
 So, the RetailItem 'hushpuppies' are in the 'shoes' Section in 'mensdept' Department of a 'superstore' Store.
 
-Now assume we also created a PriceUtil at the 'shoes' Section.
+Assume we also created a PriceUtil at the 'shoes' Section.
 
     /superstore/mensdept/shoes/shoespriceutil
 
-Now if we do a PriceUtil lookup (content type name 'mystore.priceutil') from the 'hushpuppies123' (context). For example we are displaying the shoes detail and need applicable price info.
+Now if we do a PriceUtil lookup (content type name 'mystore.priceutil') from the 'hushpuppies123' (context). (For example, we are displaying the shoes detail view and need applicable price info.)
 
     from ztree.query.manager import TreeQueryManager
     tqm = TreeQueryManager()
@@ -93,7 +93,7 @@ Now if we do a PriceUtil lookup (content type name 'mystore.priceutil') from the
 
 We will get the '/superstore/mensdept/shoes/shoespriceutil' utility.
 
-This could be used to override objects (pricing configuration in this case) in more local parts of the tree branch. For example we could set up some generic PricUtil at the department level and override it by creating one at the 'shoes' section level. Lookup always retrieving more local object. 
+This could be used to override objects (pricing configuration in this case) in more local parts of the site tree. For example we could set up some generic PricUtil at the department level and override it by creating one at the 'shoes' section level. For example, department discount is 10%, but only for short time there is a 20% discount at Mens Shoes section. Lookup always retrieving more local object. 
 
 
 Authentication
