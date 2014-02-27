@@ -1,44 +1,14 @@
-
 from django.utils.safestring import mark_safe
 
 from zportlet.portlet import Portlet
-from ztree.constraints import get_create_links
 from ztree.query.manager import TreeQueryManager
+from akuna.component import query_component
+#from ztree.utils import group_per_content_type
 
 import logging
 logger = logging.getLogger('ztree')
 
 tqm = TreeQueryManager()
-
-
-class CreateLinksPortlet(Portlet):
-
-    def render(self):
-        logger.debug("..... rendering CreateLinksPortlet .....")
-
-        create_links = get_create_links(self.request.tree_context)
-        if create_links:
-            create_links_html = u''
-            for link in create_links:
-                link_text = link['verbose_name']
-                create_links_html += u'<li><a href="' + link['url'] + u'">' + link_text + u'</a></li>\n'
-            create_links_html += u'</ul>\n'
-            return mark_safe(create_links_html)
-
-        return u'<!-- empty context menu -->\n'
-
-from django.conf import settings
-
-def _page_size(context_path):
-    # TODO lookup page_size config from context_path
-
-    # if nothing found return some default page size
-    return 4
-
-
-
-from akuna.component import query_component
-from ztree.utils import group_per_content_type
 
 class ChildrenListPortlet(Portlet):
  

@@ -3,12 +3,12 @@ from django.template.defaultfilters import slugify
 from ztree.models import Node
 #from ztree.signals import tree_content_created, tree_content_updated
 from ztree.utils import filter_and_clean_fields, dispatch_request_json
-from ztree.component.slugutils import SlugUtil
+from ztreecrud.component.slugutils import SlugUtil
 from akuna.component import get_component
 from akuna.component.errors import ComponentDoesNotExist
 
 import logging
-logger = logging.getLogger('ztree')
+logger = logging.getLogger('ztreecrud')
 
 
 def create_node_factory(sender, **kwargs):
