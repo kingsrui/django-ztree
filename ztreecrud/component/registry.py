@@ -1,6 +1,6 @@
 from django.conf import settings
 from akuna.component import register_component
-from ztree.component.views import GenericCreateView, GenericUpdateView, GenericDeleteView
+from ztreecrud.component.views import GenericCreateView, GenericUpdateView, GenericDeleteView
 
 # create view context=(<tree parent obj> , <content type of obj being create>)
 register_component(GenericCreateView, context=('object', 'ContentType',) )

@@ -3,7 +3,7 @@ from django.template import RequestContext
 from django import forms
 
 from akuna.component import get_component
-from ztree.component.views import GenericCreateView
+from ztreecrud.component.views import GenericCreateView
 from ztreeauth import get_user, get_all_groups
 from ztreeauth.models import LocalUser
 
