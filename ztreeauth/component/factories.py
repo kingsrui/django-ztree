@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from ztreeauth.models import LocalUser
-from ztree.component.factories import create_node_factory
+from ztreecrud.component.factories import create_node_factory
 
 import logging
 logger = logging.getLogger('ztreeauth')
