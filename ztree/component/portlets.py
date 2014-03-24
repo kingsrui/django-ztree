@@ -10,6 +10,9 @@ logger = logging.getLogger('ztree')
 
 tqm = TreeQueryManager()
 
+def _page_size(context_path):
+    return 4
+
 class ChildrenListPortlet(Portlet):
  
     def render(self):
