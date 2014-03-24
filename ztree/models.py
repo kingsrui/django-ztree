@@ -6,6 +6,7 @@ from django.contrib.contenttypes.models import ContentType
 import datetime
 
 from mptt.models import MPTTModel
+from mptt.managers import TreeManager
 
 from ztree.errors import SlugNotUniqueError
 from ztree.constraints import check_constraints
@@ -50,6 +51,7 @@ class Node(MPTTModel):
 
     objects = models.Manager()
     on_site = CurrentSiteManager()
+    tree = TreeManager()
 
     #visible_nodes = VisibleNodesManager()
     #active_nodes = ActiveNodesManager()
