@@ -51,6 +51,8 @@ class Node(MPTTModel):
 
     objects = models.Manager()
     on_site = CurrentSiteManager()
+    # from mptt 0.5 TreeManager is default mgr (.objects)
+    # could refactor to use .objects everywhere but adding it explictly
     tree = TreeManager()
 
     #visible_nodes = VisibleNodesManager()
