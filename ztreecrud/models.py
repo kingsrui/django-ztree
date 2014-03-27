@@ -1,2 +1,2 @@
 
-from ztree.component import registry
+from ztreecrud.component import registry
